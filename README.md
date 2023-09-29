@@ -1,3 +1,4 @@
+
 # AirBnB Clone - The Console
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
@@ -133,7 +134,7 @@ vagrantAirBnB_clone$./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
-========================================
+
 EOF  all  create  destroy  help  quit  show  update
 
 (hbnb) all MyModel
@@ -162,3 +163,5 @@ Okang Etta - [Github](https://github.com/OmniGirl / [Twitter](https://twitter.co
 Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
+AirBnB_clone_v3
+>>>>>>> d5c1035d7bfcafec43b94c79dec213628446dfab
