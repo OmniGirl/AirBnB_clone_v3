@@ -82,27 +82,25 @@ class DBStorage:
         self.__session.remove()
 
     def get(self, cls, id):
-<<<<<<< HEAD
-	"""This method retrieves an object"""
-	if cls is not None and type(cls) is str and id is not None\
-	   and type(id) is str and cls in classes:
-		cls = classes[cls]
-		res = self.__session.query(cls).filter(cls.id == id).first()
-		return res
-	else:
-		return None
+        """This method retrieves an object"""
+        if cls is not None and type(cls) is str and id is not None\
+                and type(id) is str and cls in classes:
+            cls = classes[cls]
+            res = self.__session.query(cls).filter(cls.id == id).first()
+            return res
+        else:
+            return None
 
     def count(self, cls=None):
-	"""This method counts the number of objects in storage"""
-	totalCount = 0
-	if type(cls) == str and cls in classes:
-		cls = classes[cls]
-		totalCount = self.__session.query(cls).count()
-	elif cls is None:
-		for cls in classes.values():
-			totalCount += self.__session.query(cls).count()
-	return totalCount
-=======
+        """This method counts the number of objects in storage"""
+        totalCount = 0
+        if type(cls) == str and cls in classes:
+            cls = classes[cls]
+            totalCount = self.__session.query(cls).count()
+        elif cls is None:
+            for cls in classes.values():
+                totalCount += self.__session.query(cls).count()
+        return totalCount
         """Retrieve an object"""
         if cls is not None and type(cls) is str and id is not None and\
            type(id) is str and cls in name2class:
@@ -122,4 +120,3 @@ class DBStorage:
             for cls in name2class.values():
                 total += self.__session.query(cls).count()
         return total
->>>>>>> 196e5fd699371dff9724b45a78c704b8c9c00838
