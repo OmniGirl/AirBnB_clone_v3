@@ -67,41 +67,22 @@ class DBStorage:
         self.__session.add(obj)
 
     def save(self):
-        """saves the current session"""
+        """This function saves the current session"""
         self.__session.commit()
 
     def delete(self, obj=None):
-        """deletes an object"""
+        """This function deletes an object"""
         if not self.__session:
             self.reload()
         if obj:
             self.__session.delete(obj)
 
     def close(self):
-        """Dispose of current session if active"""
+        """This function disposes of current session if active"""
         self.__session.remove()
 
     def get(self, cls, id):
-        """This method retrieves an object"""
-        if cls is not None and type(cls) is str and id is not None\
-                and type(id) is str and cls in classes:
-            cls = classes[cls]
-            res = self.__session.query(cls).filter(cls.id == id).first()
-            return res
-        else:
-            return None
-
-    def count(self, cls=None):
-        """This method counts the number of objects in storage"""
-        totalCount = 0
-        if type(cls) == str and cls in classes:
-            cls = classes[cls]
-            totalCount = self.__session.query(cls).count()
-        elif cls is None:
-            for cls in classes.values():
-                totalCount += self.__session.query(cls).count()
-        return totalCount
-        """Retrieve an object"""
+        """This function retrieves an object"""
         if cls is not None and type(cls) is str and id is not None and\
            type(id) is str and cls in name2class:
             cls = name2class[cls]
@@ -111,7 +92,7 @@ class DBStorage:
             return None
 
     def count(self, cls=None):
-        """Count number of objects in storage"""
+        """ This counts number of objects in storage"""
         total = 0
         if type(cls) == str and cls in name2class:
             cls = name2class[cls]
